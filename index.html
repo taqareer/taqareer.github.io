@@ -389,7 +389,8 @@ ${g}`}class Fe extends Error{constructor({message:t,code:n,cause:r,name:s}){var 
     #report-template{display:block}
     .sheet{width:210mm;height:297mm;position:relative;overflow:hidden;page-break-after:always;break-after:page;page-break-inside:avoid;break-inside:avoid}
     #report-template>.sheet:last-child{page-break-after:auto;break-after:auto}
-    .land{position:absolute;top:50%;left:50%;width:297mm;height:210mm;transform:translate(-50%,-50%) rotate(90deg);transform-origin:center center}`,c=n?s():t.outerHTML,l=`<!DOCTYPE html><html dir="rtl" lang="ar"><head><meta charset="UTF-8"/>
+    /* deterministic landscape-on-portrait: rotate about top-left corner */
+    .land{position:absolute;top:0;left:0;width:297mm;height:210mm;transform-origin:0 0;transform:rotate(90deg) translateY(-210mm)}`,c=n?s():t.outerHTML,l=`<!DOCTYPE html><html dir="rtl" lang="ar"><head><meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=block&subset=arabic" rel="stylesheet"/>
